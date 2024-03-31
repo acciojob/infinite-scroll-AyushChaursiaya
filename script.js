@@ -16,13 +16,22 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Event listener to check scroll position and add more items if at the end
-    window.addEventListener("scroll", function() {
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            // Add 2 more list items
-            addListItem();
-            addListItem();
-        }
-    });
+    // window.addEventListener("scroll", function() {
+    //     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    //         // Add 2 more list items
+    //         addListItem();
+    //         addListItem();
+    //     }
+    // });
+	window.addEventListener("scroll", function() {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (window.scrollY >= scrollableHeight) {
+        // Add 2 more list items
+        addListItem();
+        addListItem();
+    }
+});
+
 });
 
 
